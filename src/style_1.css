@@ -1,0 +1,385 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    min-height: 100vh;
+    gap: 15px;
+    background-image: url('Hintergrund.jpeg');
+    background-size: cover;
+    box-sizing: border-box;
+}
+
+header {
+    grid-column: 1 / 4;
+    display: flex;
+    align-items: center;
+    height: auto;
+    padding: 15px 25px;
+}
+
+main {
+    padding: 15px;
+    margin: 10px;
+    border: 5px solid darkgreen;
+    border-radius: 1rem;
+}
+
+footer {
+    grid-column: 1/4;
+    border: 5px solid darkblue;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+aside {
+    padding: 10px;
+    margin: 10px;
+    border: 5px solid #0B1491;
+}
+
+figure {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.JRS_Logo {
+    width: 400px;
+    height: 190px;
+    object-fit: contain;
+    margin: 0px;
+    padding-left: 0px;
+    display: block;
+}
+
+img {
+    margin: 0px;
+    padding-left: 0px;
+}
+
+html {
+    font-family: arial;
+}
+
+h1 {
+    text-shadow: 2px 2px 3px #dbdbdb;
+    text-align: center;
+    color: #ffffff;
+
+}
+
+h2 {
+    color: #ffffff;
+    text-shadow: 2px 2px 3px #dbdbdb;
+
+}
+
+p {
+    color: #ffffff;
+    font-size: 14px;
+    text-align: justify
+}
+
+.Themenbeginn {
+    color: #ffffff;
+
+    font-size: 18px;
+    text-decoration: underline #007004;
+    text-align: justify
+}
+
+.link {
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.link_1 {
+    color: #ffffff;
+    background-color: #007004;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 7px;
+}
+
+.link_2 {
+    color: #ffffff;
+    border-radius: 10px;
+    text-decoration: none;
+    padding: 7px;
+}
+
+.link_2:hover {
+    color: #007004;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 7px;
+    transition: all 0.3s ease;
+}
+
+
+header,
+main,
+aside,
+footer {
+    background-color: rgba(15, 15, 15, 0.604);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 0;
+}
+
+figcaption {
+    font-size: 14px;
+}
+
+
+.Datum {
+    color: #007004;
+    font-size: 14px;
+}
+
+.sub {
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+}
+
+
+li {
+    color: #ffffff
+}
+
+.Themenbeginn_2 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.menu p {
+    margin: 20px;
+}
+
+.menu a:hover {
+    background-color: #0B1491;
+    padding: 7px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.description {
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    padding: 50px;
+}
+
+.description {
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    padding: 50px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(12, 12, 12, 0.85);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    margin-top: 10px;
+}
+
+th {
+    color: #ffffff;
+    font-family: arial;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: rgba(0, 112, 4, 0.8);
+    text-align: left;
+    padding: 14px 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+td {
+    color: #e0e0e0;
+    font-family: arial;
+    font-size: 14px;
+    background-color: transparent;
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+
+tr:hover {
+    background-color: rgba(0, 112, 4, 0.25);
+}
+
+.ad-container {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 15px 10px;
+    animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.ad-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.ad-wrapper img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.ad-wrapper img:hover {
+    transform: scale(1.02);
+}
+
+.cooperations {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+    flex-wrap: nowrap;
+    width: 100%;
+    animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.coop-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    max-width: 380px;
+}
+
+.cooperations img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    margin-top: 10px;
+    border-radius: 6px;
+    justify-items: center;
+}
+
+.coop-card p:nth-of-type(2) {
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+}
+
+.notice {
+    font-weight: bold;
+    color: #c11700;
+}
+
+li {
+    opacity: 0;
+    animation: slideInRight 1.0s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+li:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+li:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+li:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+li:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+li:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+li:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+#submitBtn,
+#logout {
+    color: #ffffff;
+    background-color: #007004;
+    font-weight: bold;
+    border-radius: 7px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 8px 18px;
+}
+
+#submitBtn:hover,
+#logout:hover {
+    background-color: #0B1491;
+    transition: all 0.3s ease;
+}
+
+#switchMode a {
+    color: #007004;
+    text-decoration: none;
+}
+
+#switchMode a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+#nameInput,
+#passwordInput {
+    background-color: rgba(0, 0, 0, 0.454);
+    color: #ffffff;
+    border-radius: 7px;
+    border-color: transparent;
+    padding: 10px;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (width <500px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+}
