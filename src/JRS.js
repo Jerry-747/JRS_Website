@@ -9,6 +9,7 @@ const welcomeArea = document.getElementById("welcomeArea");
 const authArea = document.getElementById("authArea");
 const logout = document.getElementById("logout");
 const activeUser = localStorage.getItem("currentUser");
+const menuToggle = document.getElementById("menuToggle");
 
 if (activeUser) {
   showWelcome(activeUser);
@@ -79,3 +80,9 @@ document.getElementById("toggleMode").addEventListener("click", (e) => {
   toggleFormMode();
 });
 logout.addEventListener("click", logoutUser);
+
+if (menuToggle) {
+  menuToggle.addEventListener("click", () => {
+    document.body.classList.toggle("menu-open");
+  });
+}
