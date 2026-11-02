@@ -11,11 +11,11 @@
 <body>
 
     <header>
-        <a href="Home.html">
+        <a href="{{ url_for('home') }}">
             <img src="src/Logo.png" alt="Logo" class="JRS_Logo">
         </a>
 
-        <button id="menuToggle" class="hamburger-btn" aria-label="Menü öffnen">
+        <button id="menuToggle" class="hamburger-btn">
             <span></span>
             <span></span>
             <span></span>
@@ -27,11 +27,11 @@
 
     <aside class="menu">
         <h2>MENÜ:</h2>
-        <p><a class="link" href="Home.html">Home</a></p>
-        <p><a class="link" href="PlusTicket.html">Das LindenhagenPLUS+-Ticket</a></p>
-        <p><a class="link" href="Fuhrparkliste.html">Fuhrparkliste</a></p>
-        <p><a class="link" href="Karriere.html">Bewirb Dich bei uns!</a></p>
-        <p><a class="link_1" href="Partner.html">Unsere Partner</a></p>
+        <p><a class="link" href="{{ url_for('home') }}">Home</a></p>
+        <p><a class="link" href="{{ url_for('plus') }}">Das LindenhagenPLUS+-Ticket</a></p>
+        <p><a class="link" href="{{ url_for('fleet') }}">Fuhrparkliste</a></p>
+        <p><a class="link" href="{{ url_for('career') }}">Bewirb Dich bei uns!</a></p>
+        <p><a class="link_1" href="{{ url_for('coop') }}">Unsere Partner</a></p>
         <hr>
         <p class="link">Die Mein-Lindenhagen-App</p>
         <p><img src="src/Mein_Lindenhagen.png" alt="App" width="230" height="115" /></p>
@@ -60,7 +60,8 @@
                 <p class="Themenbeginn">Verkehrsbetriebe Lindenhagener Förde</p>
                 <img src="src/VLF_Logo.png" alt="Verkehrsbetriebe Lindenhagener Förde">
                 <p>Mit seinem Ursprung in einem kleinen Dorf zwischen Flensburg und Schleswig und einer 150-jährigen
-                    Tradition liegt das Aufgabenfeld/Einsatzgebiet der Verkehrsbetriebe Lindenhagener Förde, ehemals SH-NordBus, im
+                    Tradition liegt das Aufgabenfeld/Einsatzgebiet der Verkehrsbetriebe Lindenhagener Förde, ehemals
+                    SH-NordBus, im
                     Lindenhagener Umland.
                 </p>
             </div>
@@ -68,7 +69,8 @@
                 <p class="Themenbeginn">OmniNetz AG - Der Nahverkehr</p>
                 <img src="src/OmniNetz_Logo.png" alt="OmniNetz AG Logo">
                 <p>Ein noch relativ neues Unternehmen ist jetzt Teil des Lindenhagener Stadtbildes. Frisch gegründet
-                    mit Hauptsitz in der niedersächsischen Stadt Neustedt wird der Stadtverkehr von Lindenhagen tatkräftig unterstützt für noch mehr Taktdichte und
+                    mit Hauptsitz in der niedersächsischen Stadt Neustedt wird der Stadtverkehr von Lindenhagen
+                    tatkräftig unterstützt für noch mehr Taktdichte und
                     Zuverlässigkeit.
                 </p>
             </div>
@@ -95,8 +97,10 @@
     <footer>
         <nav>
             <h2>Kontakt:</h2>
-            <p><a class="link_2" href="https://instagram.com" target="_blank" rel="noopener noreferrer">Unsere Instagramseite</a></p>
-            <p><a class="link_2" href="https://facebook.com" target="_blank" rel="noopener noreferrer">Unsere Facebookseite</a></p>
+            <p><a class="link_2" href="https://instagram.com" target="_blank" rel="noopener noreferrer">Unsere
+                    Instagramseite</a></p>
+            <p><a class="link_2" href="https://facebook.com" target="_blank" rel="noopener noreferrer">Unsere
+                    Facebookseite</a></p>
             <p><a class="link_2" href="mailto:info@jrs-lindenhagen.de">Schreiben Sie uns eine E-Mail!</a></p>
         </nav>
     </footer>

@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jerry's Omnibus Reiseservice</title>
-    <link rel="stylesheet" href="src/style_1.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_1.css') }}">
 </head>
 
 <body>
 
     <header>
-        <a href="Home.html">
-            <img src="src/Logo.png" alt="Logo" class="JRS_Logo">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='Logo.png') }}" alt="Logo" class="JRS_Logo">
         </a>
 
         <button id="menuToggle" class="hamburger-btn">
@@ -22,26 +22,26 @@
         </button>
 
         <h1 class="h1">Jerry's Omnibus Reiseservice <br> Das fiktive Omnibusunternehmen aus Lindenhagen</h1>
-        <p style="padding-left: 1;" class="sub"></p>
     </header>
 
     <aside class="menu">
         <h2>MENÜ:</h2>
-        <p><a class="link_1" href="Home.html">Home</a></p>
-        <p><a class="link" href="PlusTicket.html">Das LindenhagenPLUS+-Ticket</a></p>
-        <p><a class="link" href="Fuhrparkliste.html">Fuhrparkliste</a></p>
-        <p><a class="link" href="Karriere.html">Bewirb Dich bei uns!</a></p>
-        <p><a class="link" href="Partner.html">Unsere Partner</a></p>
+        <p><a class="link_1" href="{{ url_for('home') }}">Home</a></p>
+        <p><a class="link" href="{{ url_for('plus') }}">Das LindenhagenPLUS+-Ticket</a></p>
+        <p><a class="link" href="{{ url_for('fleet') }}">Fuhrparkliste</a></p>
+        <p><a class="link" href="{{ url_for('career') }}">Bewirb Dich bei uns!</a></p>
+        <p><a class="link" href="{{ url_for('coop') }}">Unsere Partner</a></p>
+
         <hr>
         <p class="link">Die Mein-Lindenhagen-App</p>
-        <p><img src="src/Mein_Lindenhagen.png" alt="App" width="230" height="115" /></p>
+        <p><img src="{{ url_for('static', filename='Mein_Lindenhagen.png') }}" alt="App" width="230" height="115" /></p>
 
         <hr>
 
         <section id="authArea">
             <h2 id="formTitle">Anmelden</h2>
             <input type="text" id="nameInput" placeholder="Benutzername">
-            <p> </p>
+            <p></p>
             <input type="password" id="passwordInput" placeholder="Passwort">
             <p><button id="submitBtn">Anmelden</button></p>
             <p id="switchMode">Noch keinen Account? <a href="#" id="toggleMode">Registrieren</a></p>
@@ -51,7 +51,6 @@
             <p id="welcomeText"></p>
             <p><button id="logout">Abmelden</button></p>
         </section>
-
     </aside>
 
     <main class="green">
@@ -175,7 +174,7 @@
         </nav>
     </footer>
 
-    <script src="src/JRS.js"></script>
+    <script src="{{ url_for('static', filename='JRS.js') }}"></script>
 
 </body>
 

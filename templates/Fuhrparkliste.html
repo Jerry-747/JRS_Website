@@ -11,7 +11,7 @@
 <body>
 
     <header>
-        <a href="Home.html">
+        <a href="{{ url_for('home') }}">
             <img src="src/Logo.png" alt="Logo" class="JRS_Logo">
         </a>
 
@@ -27,11 +27,11 @@
 
     <aside class="menu">
         <h2>MENÜ:</h2>
-        <p><a class="link" href="Home.html">Home</a></p>
-        <p><a class="link_1" href="PlusTicket.html">Das LindenhagenPLUS+-Ticket</a></p>
-        <p><a class="link" href="Fuhrparkliste.html">Fuhrparkliste</a></p>
-        <p><a class="link" href="Karriere.html">Bewirb Dich bei uns!</a></p>
-        <p><a class="link" href="Partner.html">Unsere Partner</a></p>
+        <p><a class="link" href="{{ url_for('home') }}">Home</a></p>
+        <p><a class="link" href="{{ url_for('plus') }}">Das LindenhagenPLUS+-Ticket</a></p>
+        <p><a class="link_1" href="{{ url_for('fleet') }}">Fuhrparkliste</a></p>
+        <p><a class="link" href="{{ url_for('career') }}">Bewirb Dich bei uns!</a></p>
+        <p><a class="link" href="{{ url_for('coop') }}">Unsere Partner</a></p>
         <hr>
         <p class="link">Die Mein-Lindenhagen-App</p>
         <p><img src="src/Mein_Lindenhagen.png" alt="App" width="230" height="115" /></p>
@@ -51,52 +51,50 @@
             <p id="welcomeText"></p>
             <p><button id="logout">Abmelden</button></p>
         </section>
-
     </aside>
 
     <main>
-
-        <h2 class="headline_shadow">Das LindenhagenPLUS+-Ticket:</h2>
-
-        <p class="description">
-            Ihr wollt nicht nur in Lindenhagen unterwegs sein, sondern auch das Umland erkundigen?
-            Dann ist das LindenhagenPLUS+-Ticket genau richtig für Euch. Es ermöglicht Euch volle Freiheit
-            in der zweiten Klasse des Nahverkehrs von Schleswig-Holstein. Das ganze ist als Einzel-, sowie
-            Gruppenticket (max. 4 Personen), sowohl als Tages- und Wochenticket verfügbar. Preise sind in der folgenden
-            Tabelle einsehbar:
-        </p>
-        <table border="1" width="100%">
+        <h2 class="headline_shadow">Fuhrparkliste:</h2>
+        <table>
             <tr>
+                <th>Kennzeichen</th>
                 <th>Typ</th>
-                <th>Zeitraum</th>
-                <th>Preis</th>
+                <th>Status</th>
+                <th>Aktion</th>
             </tr>
-
+            {% for vehicle in fuhrpark_liste %}
             <tr>
-                <td rowspan="2">Einzelticket</td>
-                <td>Tagesticket</td>
-                <td>19.99€</td>
+                <td>{{ vehicle.regs }}</td>
+                <td>{{ vehicle.type }}</td>
+                <td>{{ vehicle.status }}</td>
+                <td>
+                    <a class="link" href="{{ url_for('fleet', edit=vehicle.id) }}">Bearbeiten</a>
+                </td>
             </tr>
-            <tr>
-                <td>Wochenticket</td>
-                <td>49.99€</td>
-            </tr>
-
-            <tr>
-                <td rowspan="2">Gruppenticket (max. 4 Pers.)</td>
-                <td>Tagesticket</td>
-                <td>54.99€</td>
-            </tr>
-            <tr>
-                <td>Wochenticket</td>
-                <td>94.99€</td>
-            </tr>
+            {% endfor %}
         </table>
-        <p class="notice">HINWEIS: Das LindenhagenPLUS+-Ticket ist personengebunden und somit nur mit einem amtlichen
-            Lichtbildausweis gültig!</p>
+
         <hr>
-        <p class="Themenbeginn">Gefördert durch:</p>
-        <img src="src/nahsh-logo.png">
+
+        {% if edit_vehicle %}
+        <p>Fahrzeug bearbeiten</p>
+        <form action="{{ url_for('update', id=edit_vehicle.id) }}" method="POST">
+            <input class="inputs" type="text" name="regs" value="{{ edit_vehicle.regs }}" required>
+            <input class="inputs" type="text" name="type" value="{{ edit_vehicle.type }}" required>
+            <input class="inputs" type="text" name="status" value="{{ edit_vehicle.status }}">
+            <button type="submit">Änderungen speichern</button>
+            <a class="link" href="{{ url_for('fleet') }}">Abbrechen</a>
+        </form>
+        {% else %}
+        <p>Neues Fahrzeug eintragen</p>
+        <form action="/Fahrzeug-hinzufuegen" method="POST">
+            <input class="inputs" type="text" name="regs" placeholder="Kennzeichen" required>
+            <input class="inputs" type="text" name="type" placeholder="Typ / Baureihe" required>
+            <input class="inputs" type="text" name="status" placeholder="Status (z.B. Im Einsatz)">
+            <button class="link" type="submit">Hinzufügen</button>
+        </form>
+        {% endif %}
+
     </main>
 
     <aside class="ad-container">
@@ -116,7 +114,6 @@
         </div>
     </aside>
 
-
     <footer>
         <nav>
             <h2>Kontakt:</h2>
@@ -129,7 +126,5 @@
     <script src="src/JRS.js"></script>
 
 </body>
-
-
 
 </html>

@@ -161,14 +161,21 @@ li {
 }
 
 .menu p {
-    margin: 20px;
+    margin: 15px 0;
 }
 
-.menu a:hover {
-    background-color: #0B1491;
-    padding: 7px;
+.menu a, 
+.link {
+    display: inline-block;
+    padding: 7px;        
     border-radius: 10px;
+    white-space: nowrap;
     font-weight: bold;
+}
+
+.menu a:hover, 
+.link:hover {
+    background-color: #0B1491;
     transition: all 0.3s ease;
 }
 
@@ -357,7 +364,8 @@ li:nth-child(7) {
 }
 
 #nameInput,
-#passwordInput {
+#passwordInput,
+.inputs {
     background-color: rgba(0, 0, 0, 0.454);
     color: #ffffff;
     border-radius: 7px;
@@ -385,6 +393,27 @@ li:nth-child(7) {
     border-radius: 2px;
     transition: all 0.3s ease;
 }
+
+td .link,
+button {
+    display: inline-block;
+    color:#ffffff;
+    padding: 6px 12px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+
+td .link:hover,
+button:hover {
+    color:#ffffff;
+    background-color: #0B1491;
+    border-color: #0B1491;
+    font-weight: normal;
+}
+
 
 @keyframes slideInRight {
     0% {

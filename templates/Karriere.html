@@ -11,7 +11,7 @@
 <body>
 
     <header>
-        <a href="Home.html">
+        <a href="{{ url_for('home') }}">
             <img src="src/Logo.png" alt="Logo" class="JRS_Logo">
         </a>
 
@@ -27,11 +27,11 @@
 
     <aside class="menu">
         <h2>MENÜ:</h2>
-        <p><a class="link" href="Home.html">Home</a></p>
-        <p><a class="link" href="PlusTicket.html">Das LindenhagenPLUS+-Ticket</a></p>
-        <p><a class="link" href="Fuhrparkliste.html">Fuhrparkliste</a></p>
-        <p><a class="link_1" href="Karriere.html">Bewirb Dich bei uns!</a></p>
-        <p><a class="link" href="Partner.html">Unsere Partner</a></p>
+        <p><a class="link" href="{{ url_for('home') }}">Home</a></p>
+        <p><a class="link" href="{{ url_for('plus') }}">Das LindenhagenPLUS+-Ticket</a></p>
+        <p><a class="link" href="{{ url_for('fleet') }}">Fuhrparkliste</a></p>
+        <p><a class="link_1" href="{{ url_for('career') }}">Bewirb Dich bei uns!</a></p>
+        <p><a class="link" href="{{ url_for('coop') }}">Unsere Partner</a></p>
         <hr>
         <p class="link">Die Mein-Lindenhagen-App</p>
         <p><img src="src/Mein_Lindenhagen.png" alt="App" width="230" height="115" /></p>
